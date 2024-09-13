@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            //create RegExp
+
+            const regEx1 = /ucup/;
+            const regEx2 = new RegExp('ucup');
+            const regEx3 = new RegExp(/ucup/);
+
+        }
+
+        {
+            // RegExp Instance Method
+            //test exec
+
+            const name = 'muhammad yusuf muhammad abdul';
+            const regex = /muhammad/;
+
+            const result = regex.exec(name);
+            console.info(result);
+            console.info(regex.exec('tidak ada'));//null
+
+            const test = regex.test(name);
+            console.info(test);//true
+            console.info(regex.exec('tidak ada'));//false
+
+        }
+
+        {
+            //modifier 
+            //i = incase sensitive/tidak peduli huruf besar kecil
+            //g = global == pencarian akan berhenti
+            //m = multiline
+
+            const name = 'muhammad yusuf\nMuhammad Yusuf\nUcup ';
+            const regex1 = /^muhammad/ig;//kalo i aja unli loop// ^ awal // m multiline
+            const regex2 = /Yusuf/ig;
+
+            let result;
+
+            while((result = regex1.exec(name)) !== null){
+                console.info(result);
+            }
+            while((result = regex2.exec(name)) !== null){
+                console.info(result);
+            }
+
+        }
+        {
+            //fitur RegExp
+
+            //advance regExp
+            const regex = /uc[uiaeo]/ig;
+
+            const name = 'uca uci udi uce uja uco ucu';
+            let result;
+            while((result = regex.exec(name)) !== null ){
+                console.info(result);
+            }
+        }
+        {
+            //regular expression
+
+            const string = 'uca uci udi uce uja uco ucu';
+
+            console.info(string.match(/uc[aiueo]/ig));//[uca,uci,uce,uco,,ucu];
+            console.info(string.search(/uc[aiueo]/ig));//0
+
+            //direplace semua
+            console.info(string.replace(/uc[aiueo]/i, 'keren'));//kalo i cuma 1 aja
+            console.info(string.replaceAll(/uc[aiueo]/ig, 'keren'));//semua
+            console.info(string.split(/u/ig, ));//yang ada u nya di ilangin
+
+        }
+    </script>
+</body>
+</html>

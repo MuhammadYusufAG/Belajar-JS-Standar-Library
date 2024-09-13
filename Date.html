@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            //Create Date
+            const date1 = new Date();
+            console.info(date1);
+
+            const date2 = new Date(2020, 11, 11);
+            console.info(date2);
+
+            const date3 = new Date(2021,10,11,12,30,0);
+            console.info(date3);
+
+            //current millis
+            const date4 = new Date(1725446487118);
+            console.info(date4);
+        }
+        {
+            //epoch & unix timestamp
+            const date1 = new Date();
+            console.info(date1.getTime);
+
+            const date2 = new Date(2020, 11, 11);
+            console.info(date2.getTime);
+
+            const date3 = new Date(2021,10,11,12,30,0);
+            console.info(date3.getTime);
+
+            //current millis
+            const date4 = new Date(1725446487118);
+            console.info(date4.getTime);
+
+            console.info(Date.now());
+        }
+
+        {
+            //getter & setter
+
+            const date = new Date();
+
+            // console.info(date.setFullYear());
+            console.info(date.getFullYear());
+            console.info(date.getMonth());
+            console.info(date.getDay());
+            console.info(date.getHours());
+            console.info(date.getMinutes());
+            console.info(date.getSeconds());
+            console.info(date.getMilliseconds());
+            console.info(date.getTimezoneOffset());
+
+            
+
+
+
+        }
+        
+    </script>
+</body>
+</html>

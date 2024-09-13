@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            //Object freeze & seal
+            const person = {
+                firstName : 'Muhammad',
+                lastName : 'Yusuf',
+            };
+    
+            //freeze = gabisa di ubah,didelete,dan ditambah
+            Object.freeze(person);
+            //seal = bisa diubah.gabisa ditambah dan dihapus
+            // Object.seal(person);
+
+            person.firstName = 'agus';
+            person.middleName = 'abdul';
+            delete person.lastName;
+
+            console.info(person)
+        }
+
+        {
+            //Obeject assign            .target & source
+            const target = {
+                firstName : 'Muhammad'
+            };
+            const source = {
+                // firstName : 'budi',//akan diganti dengan ini
+                lastName : 'Yusuf'
+            }
+
+            Object.assign(target,source);
+            console.info(target);
+            console.info(source);
+
+        }
+
+        {
+            //Object  Property name & values
+            const person = {
+                firstName : 'Muhammad',
+                lastName : 'Yusuf',
+            }
+
+            console.info(Object.values);
+            console.info(Object.getOwnPropertyNames(person));
+        }
+
+    </script>
+</body>
+</html>

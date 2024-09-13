@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const map = new Map();
+
+        map.set('name', 'muhammad yusuf');
+        map.set('age', 20);
+
+        console.info(map);
+        console.info(map.get('name'));
+        console.info(map.get('age'));
+        console.info(map.get('address'));
+
+        for (const element of map) {
+            console.info(`${element[0]} : ${element[1]}`);
+        }
+
+        //lebih bagus ini dari pada menggunakan forof
+        map.forEach((value, key) => console.info(`${key} : ${value}`));
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const target = {
+            middleName : 'Yusuf'
+        };
+
+        const handler = {
+            get: function(target, property) {//dipanggil ketika data proxynya dipanggil
+                //log hendler
+                console.info(`Access property : ${property}`);
+                return target[property]
+            },
+            set: function(target, property, value) {//dipanggil ketika mau di set 
+                //log  handler
+                console.info(`Change property ${property} : ${value}`);
+                target[property] = value;
+                // //klo ada null
+                // if(value == null){
+                //     // target[property] = '';
+                //     //menggunakan throw error
+                //     throw new Error('tidak boleh null')
+                // }
+                // else{
+                //     target[property] = value;
+                // };
+            }
+
+        };
+
+        //membuat proxy
+        const proxy = new Proxy(target, handler);
+        proxy.firstName = 'Muhammad';
+        proxy.lastName = 'Abdul Ghany';
+        //jika null lastName
+        // proxy.lastName = null;
+
+        console.info(proxy.firstName);
+        console.info(proxy.middleName);
+        console.info(proxy.lastName);
+        console.info(target);
+
+
+
+    </script>
+</body>
+</html>
